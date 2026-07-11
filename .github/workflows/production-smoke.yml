@@ -1,0 +1,21 @@
+name: Production Smoke Test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify production returns the game
+        env:
+          PRODUCTION_URL: https://slime-quest-web-game.pages.dev
+        run: |
+          set -euo pipefail
+          status=$(curl --silent --show-error --location --retry 5 --retry-delay 5 --output response.html --write-out '%{http_code}' "$PRODUCTION_URL")
+          test "$status" = "200"
+          grep -q "SLIME QUEST" response.html
+          echo "Production smoke test passed with HTTP $status"
