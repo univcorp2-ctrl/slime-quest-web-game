@@ -1,5 +1,7 @@
 # Slime Quest
 
+[🎮 本番環境で遊ぶ](https://slime-quest-web-game.pages.dev) · [⚙️ GitHub Actions](https://github.com/univcorp2-ctrl/slime-quest-web-game/actions) · [💻 Codespacesで開く](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=1297141853)
+
 ![Slime Quest architecture and game flow](docs/assets/architecture.svg)
 
 ブラウザだけで遊べる、レスポンシブ対応の2Dアクションゲームです。青いスライムを操作し、コインをすべて集めて森の右端にあるクリスタルへ到達するとクリアです。
